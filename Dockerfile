@@ -16,4 +16,4 @@ RUN mkdir -p /var/log/supervisor
 COPY bin /opt/bin
 
 # Start supervisord
-CMD ["/usr/bin/supervisord"]
+CMD ["/usr/bin/supervisord", "--loglevel", "warn"]
