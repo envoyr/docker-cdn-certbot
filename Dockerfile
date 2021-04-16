@@ -1,4 +1,4 @@
-FROM ubuntu:forcal
+FROM ubuntu:focal
 
 # Update and install core components
 RUN apt-get update -y && apt-get upgrade -y
