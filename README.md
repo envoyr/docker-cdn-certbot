@@ -10,7 +10,7 @@
 ````
 version: "3"
 services:
-  app:
+  certbot:
     image: envoyr/cdn-certbot:latest
     volumes:
       - certs:/etc/letsencrypt
