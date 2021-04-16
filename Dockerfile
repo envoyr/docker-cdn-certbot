@@ -3,7 +3,7 @@ FROM ubuntu:forcal
 # Update and install core components
 RUN apt-get update -y && apt-get upgrade -y
 RUN apt-get install -y 
-    software-properties-common supervisor
+    software-properties-common supervisor certbot
 
 # Install php components
 RUN add-apt-repository ppa:ondrej/php -y
