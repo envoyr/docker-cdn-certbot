@@ -73,7 +73,7 @@ class worker
         $this->info("Obtain new certificate for domain: {$domain}");
         exec("certbot certonly --standalone -d {$domain} --non-interactive --agree-tos --email {$this->email} --http-01-port=8888" . ($this->debug ? ' --dry-run' : ''), $output, $result_code);
 
-        if ($result_code === 0 && preg_match("/\/etc\/letsencrypt\/live\/(.*)\/fullchain\.pem/", $output, $matches)) {
+        if ($result_code === 0 && preg_match("/\/etc\/letsencrypt\/live\/(.*)\/fullchain\.pem/", implode(PHP_EOL, $output), $matches)) {
             $this->info('Certificate created!');
 
             // Update domain
