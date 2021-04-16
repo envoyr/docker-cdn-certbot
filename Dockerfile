@@ -12,7 +12,7 @@ RUN apt-get install -y
 
 # Prepare folders and files
 RUN mkdir -p /var/log/supervisor
-COPY worker.php /etc/worker.php
+COPY worker.php /opt/worker.php
 
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY docker-supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 CMD ["/usr/bin/supervisord"]
